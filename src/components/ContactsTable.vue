@@ -23,3 +23,11 @@
     </v-simple-table>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["contacts"]
+};
+</script>
+
+<style></style>
