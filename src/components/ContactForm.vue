@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="teal--text">New Contact</h3>
-    <v-form @submit.prevent="handleSubmit">
+    <v-form @submit.prevent="handleSubmit" ref="contactForm">
       <v-text-field
         outlined
         label="First Name"
@@ -69,6 +69,12 @@ export default {
   },
   methods: {
     handleSubmit() {
+      const isValid = this.$refs.contactForm.validate();
+      if (!isValid) {
+        // Form is not valid. Exit the method
+        return;
+      }
+
       this.$emit("contact-submit", this.form);
       this.form = {
         firstName: "",
@@ -77,6 +83,7 @@ export default {
         type: "",
         email: ""
       };
+      this.$refs.contactForm.resetValidation();
     }
   }
 };
