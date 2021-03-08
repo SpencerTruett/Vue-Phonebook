@@ -1,7 +1,13 @@
 <template>
   <div>
-    <ContactsTable :contacts="contacts" />
-    <ContactForm @contact-submit="addContact" />
+    <v-row>
+      <v-col :lg="8" :md="12">
+        <ContactsTable :contacts="contacts" />
+      </v-col>
+      <v-col :lg="4" :md="12">
+        <ContactForm @contact-submit="addContact" />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
