@@ -1,9 +1,12 @@
 <template>
-  <h1>Phonebook stuff goes here</h1>
+  <ContactForm />
 </template>
 
 <script>
+import ContactForm from "./ContactForm";
+
 export default {
+  components: { ContactForm },
   data() {
     return {
       contacts: []
