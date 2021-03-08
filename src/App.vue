@@ -5,12 +5,18 @@
       <h1>Phonebook</h1>
     </v-app-bar>
 
-    <v-main></v-main>
+    <v-main class="ma-5">
+      <Phonebook />
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import Phonebook from "./components/Phonebook";
+
 export default {
-  name: "App"
+  components: {
+    Phonebook
+  }
 };
 </script>
