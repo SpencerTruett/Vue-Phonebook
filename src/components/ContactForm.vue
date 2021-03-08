@@ -28,7 +28,14 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(this.form);
+      this.$emit("contact-submit", this.form);
+      this.form = {
+        firstName: "",
+        lastName: "",
+        phone: "",
+        type: "",
+        email: ""
+      };
     }
   }
 };
